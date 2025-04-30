@@ -1,9 +1,10 @@
-version: '3.7'
 services:
-
-  # Disable the sogo-mailcow service
   sogo-mailcow:
-    restart: "no"
+    entrypoint: ["sh", "-c", "echo 'SOGo disabled'; sleep infinity"]
+    deploy:
+      resources:
+        limits:
+          memory: 8m
 
   # Set memory limits
   clamd-mailcow:
