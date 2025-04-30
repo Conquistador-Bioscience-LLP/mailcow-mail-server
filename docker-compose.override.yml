@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+
+  # Disable the sogo-mailcow service
+  sogo-mailcow:
+    restart: "no"
+
+  # Set memory limits
+  clamd-mailcow:
+    mem_limit: 384m
+    mem_reservation: 256m
+    memswap_limit: 2g
